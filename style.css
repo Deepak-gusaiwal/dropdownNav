@@ -1,0 +1,154 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* =============================navbar css */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background-color: antiquewhite;
+  position: relative;
+}
+.navMenu {
+  display: flex;
+  gap: 1rem;
+}
+.navToggler {
+  width: 40px;
+  height: 40px;
+  background-color: blanchedalmond;
+  border: 2px solid black;
+  display: none;
+}
+.dropDownToggler {
+  position: relative;
+}
+
+.dropList {
+  position: absolute;
+  top: 110%;
+  background-color: white;
+  max-width: fit-content;
+  min-width: 150px;
+  border: 1px solid black;
+  transform: translateX(-50%);
+  left: 50%;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  transition: 200ms;
+}
+.dropList li:hover {
+  background-color: aqua;
+}
+.dropDownToggler:hover .dropList {
+  visibility: visible;
+  opacity: 1;
+  top: 100%;
+}
+/* sub dropdwon */
+.subDropToggler{
+    position: relative;
+}
+.subDropToggler .subDropList{
+   position: absolute;
+   left: 110%;
+   top: 0;
+   min-width: 150px;
+   background-color: white;
+   padding: 1rem;
+   border: 1px solid black;
+   visibility: hidden;
+   opacity: 0;
+   transition: 200ms;
+}
+.subDropToggler:hover .subDropList{
+    visibility: visible;
+    opacity: 1;
+    left: 100%;
+}
+
+.subDropToggler label,
+.subDropToggler input,
+.dropDownToggler label,
+.dropDownToggler input {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navMenu {
+    position: absolute;
+    flex-direction: column;
+    top: 100%;
+    right: 0;
+    min-width: 250px;
+    background-color: antiquewhite;
+    padding: 1rem;
+    height: 99vh;
+    transform: scalex(0);
+    transform-origin: right;
+    transition: 200ms ease-in-out;
+  }
+  .showNav {
+    transform: scaleX(1);
+  }
+  .navToggler {
+    display: flex;
+  }
+
+  .dropDownToggler > a,
+  .subDropToggler > a 
+  {
+    display: none;
+  }
+  .dropDownToggler label,
+  .subDropToggler label
+   {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    width: 100%;
+  }
+  .dropDownToggler .dropList,
+  .subDropToggler .subDropList
+   {
+    visibility: initial;
+    opacity: 1;
+    position: inherit;
+    top: initial;
+    left: initial;
+    transform: initial;
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    display: none;
+    border: 0;
+    padding: 0.5rem;
+  }
+  .dropDownToggler:hover .dropList,
+  .subDropToggler:hover .subDropList
+   {
+    top: initial;
+    left: initial;
+  }
+  .dropDownToggler input:checked ~ .dropList,
+  .subDropToggler input:checked ~ .subDropList
+   {
+    display: flex;
+    flex-direction: column;
+  }
+}

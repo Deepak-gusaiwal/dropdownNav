@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drop Down Menu</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" async></script>
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="logo">LOGO</a>
+      <ul class="navMenu">
+        <li class="dropDownToggler">
+          <a href="/">Home</a>
+          <label for="homedrop">
+            <span>Home</span>
+            <a href="/">></a>
+          </label>
+          <input type="checkbox" name="" id="homedrop" />
+          <ul class="dropList">
+
+            <li class="subDropToggler">
+              <a href="/">Home-1</a>
+
+              <label for="home-1">
+                <span>Home-1</span>
+                <a href="/">></a>
+              </label>
+              <input type="checkbox" name="" id="home-1" />
+              <ul class="subDropList">
+                <li><a href="">home-a</a></li>
+                <li><a href="">home-b</a></li>
+              </ul>
+            </li>
+
+            <li >
+                <a href="/">Home-2</a>
+            </li>
+            <li><a href="/">Home-3</a></li>
+          </ul>
+        </li>
+        <li><a href="/">About</a></li>
+        <li><a href="/">Services</a></li>
+        <li><a href="/">Contact</a></li>
+      </ul>
+      <button>button</button>
+      <div class="navToggler"></div>
+    </nav>
+  </body>
+</html>
